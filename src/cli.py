@@ -192,10 +192,10 @@ class CLIInterface:
         print(f" Pending Tasks:        {stats['pending']}")
         print(f" Completion Rate:      {stats['percentage']}%")
 
-        # Visual progress bar
+        # Visual progress bar using standard ASCII characters for cross-platform safety
         bar_length = 20
         filled_length = int(bar_length * stats['percentage'] // 100)
-        bar = "█" * filled_length + "-" * (bar_length - filled_length)
+        bar = "#" * filled_length + "-" * (bar_length - filled_length)
         print(f" Progress:             [{bar}] {stats['percentage']}%")
         self._pause()
 
