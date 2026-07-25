@@ -1,0 +1,11 @@
+# Python Todo List Application Requirements
+# Python Version: Python 3.8+
+#
+# This application is designed using standard Python libraries and has NO external pip dependencies.
+# Standard modules used:
+# - json
+# - os
+# - sys
+# - datetime
+# - typing
+# - dataclasses

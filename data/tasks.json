@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Complete Python Todo List App",
+        "description": "Implement OOP architecture, CLI interface, and JSON storage persistence.",
+        "priority": "High",
+        "due_date": "2026-07-30",
+        "status": "Completed",
+        "created_at": "2026-07-25 10:00:00"
+    },
+    {
+        "id": 2,
+        "title": "Prepare Weekly Project Status Report",
+        "description": "Summarize key accomplishments, open risks, and next week priorities.",
+        "priority": "Medium",
+        "due_date": "2026-07-28",
+        "status": "Pending",
+        "created_at": "2026-07-25 11:30:00"
+    },
+    {
+        "id": 3,
+        "title": "Review Pull Requests",
+        "description": "Review code submissions for backend API refactoring.",
+        "priority": "High",
+        "due_date": "2026-07-26",
+        "status": "Pending",
+        "created_at": "2026-07-25 14:15:00"
+    },
+    {
+        "id": 4,
+        "title": "Update Documentation & README",
+        "description": "Write installation instructions, command guides, and feature breakdown.",
+        "priority": "Low",
+        "due_date": "2026-08-02",
+        "status": "Pending",
+        "created_at": "2026-07-25 16:45:00"
+    }
+]
