@@ -27,6 +27,13 @@ class CLIInterface:
 
     def run(self) -> None:
         """Main application loop displaying the main menu and handling choices."""
+        # Enable UTF-8 stdout encoding on Windows consoles if supported
+        if hasattr(sys.stdout, "reconfigure"):
+            try:
+                sys.stdout.reconfigure(encoding="utf-8")
+            except Exception:
+                pass
+
         while True:
             self._print_header("===== TODO APP =====")
             print("1. View Tasks")
@@ -239,7 +246,7 @@ class CLIInterface:
             priority=priority,
             due_date=due_date,
         )
-        print(f"\n[✓] Task successfully created with ID #{task.id}!")
+        print(f"\n[+] Task successfully created with ID #{task.id}!")
         self._pause()
 
     def _handle_edit_task(self) -> None:
@@ -291,7 +298,7 @@ class CLIInterface:
         )
 
         if updated:
-            print(f"\n[✓] Task #{task_id} updated successfully!")
+            print(f"\n[+] Task #{task_id} updated successfully!")
         else:
             print(f"\n[!] Failed to update task #{task_id}.")
         self._pause()
@@ -312,7 +319,7 @@ class CLIInterface:
             return
 
         if self.manager.complete_task(task_id):
-            print(f"\n[✓] Task #{task_id} marked as Completed!")
+            print(f"\n[+] Task #{task_id} marked as Completed!")
         else:
             print(f"\n[!] Task ID {task_id} not found.")
         self._pause()
@@ -341,7 +348,7 @@ class CLIInterface:
         confirm = input(f"Are you sure you want to delete task '{task.title}'? (y/N): ").strip().lower()
         if confirm == "y":
             if self.manager.delete_task(task_id):
-                print(f"\n[✓] Task #{task_id} deleted successfully.")
+                print(f"\n[+] Task #{task_id} deleted successfully.")
             else:
                 print(f"\n[!] Failed to delete task #{task_id}.")
         else:
